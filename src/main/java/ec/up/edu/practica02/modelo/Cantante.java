@@ -11,16 +11,17 @@ import java.util.List;
  *
  * @author ESTUDIANTE
  */
-public class Cantante extends Persona{
+public class Cantante extends Persona {
+
     private String nombreArtistico;
     private String generoMusical;
     private int numeroDeSensillos;
     private int numeroDeConciertos;
     private int numeroDeGiras;
-    private List <Disco> discografia;
+    private List<Disco> discografia;
 
-    public Cantante(String nombreArtistico, String generoMusical, int numeroDeSensillos, int numeroDeConciertos, int numeroDeGiras, int codigo, String nombre, String apellido, int edad, double salario,String nacionalidad) {
-        super(codigo, nombre, apellido, edad, salario,nacionalidad);
+    public Cantante(String nombreArtistico, String generoMusical, int numeroDeSensillos, int numeroDeConciertos, int numeroDeGiras, int codigo, String nombre, String apellido, int edad, double salario, String nacionalidad) {
+        super(codigo, nombre, apellido, edad, salario, nacionalidad);
         this.nombreArtistico = nombreArtistico;
         this.generoMusical = generoMusical;
         this.numeroDeSensillos = numeroDeSensillos;
@@ -28,9 +29,7 @@ public class Cantante extends Persona{
         this.numeroDeGiras = numeroDeGiras;
         this.discografia = new ArrayList();
     }
-    
-    
-    
+
     public String getNombreArtistico() {
         return nombreArtistico;
     }
@@ -78,31 +77,29 @@ public class Cantante extends Persona{
     public void setDiscografia(List<Disco> discografia) {
         this.discografia = discografia;
     }
-    
+
     //metodos
-    public void agregarDisco(int codigo, String nombre, int anioDeLanzamiento){
+    public  void agregarDisco(int codigo, String nombre, int anioDeLanzamiento) {
         Disco disco = new Disco(codigo, nombre, anioDeLanzamiento);
         discografia.add(disco);
     }
-    
+
     @Override
-    public  double calcularSalario() {
-        if (numeroDeSensillos > 10 && numeroDeGiras >3){   
-        }else if (numeroDeSensillos >1 || numeroDeSensillos<=10 ) {
+    public double calcularSalario() {
+        if (numeroDeSensillos > 10 && numeroDeGiras > 3) {
+        } else if (numeroDeSensillos > 1 || numeroDeSensillos <= 10) {
             return (super.getSalario() + 1000);
-        }else if (numeroDeGiras > 0 || numeroDeGiras<4) {
-            return (super.getSalario() + super.getSalario()*0.05);
-        }else if (discografia.size() >= 5){
-            return (super.getSalario() + super.getSalario()*0.03);
+        } else if (numeroDeGiras > 0 || numeroDeGiras < 4) {
+            return (super.getSalario() + super.getSalario() * 0.05);
+        } else if (discografia.size() >= 5) {
+            return (super.getSalario() + super.getSalario() * 0.03);
         }
         return super.getSalario();
     }
 
     @Override
     public String toString() {
-        return "Cantante{" + super.toString()+"nombreArtistico=" + nombreArtistico + ", generoMusical=" + generoMusical + ", numeroDeSensillos=" + numeroDeSensillos + ", numeroDeConciertos=" + numeroDeConciertos + ", numeroDeGiras=" + numeroDeGiras + ", discografia=" + discografia + '}';
+        return "Cantante{" + super.toString() + "nombreArtistico=" + nombreArtistico + ", generoMusical=" + generoMusical + ", numeroDeSensillos=" + numeroDeSensillos + ", numeroDeConciertos=" + numeroDeConciertos + ", numeroDeGiras=" + numeroDeGiras + ", discografia=" + discografia + '}';
     }
 
-
-    
 }
