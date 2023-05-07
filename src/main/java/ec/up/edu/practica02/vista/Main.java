@@ -8,7 +8,6 @@ import ec.up.edu.practica02.controlador.ControladorPersona;
 import ec.up.edu.practica02.modelo.Cantante;
 import ec.up.edu.practica02.modelo.Compositor;
 import ec.up.edu.practica02.modelo.Persona;
-import java.awt.Component;
 import java.util.Scanner;
 
 /**
@@ -23,7 +22,7 @@ public class Main {
         
         int opcion = 0;
         do{
-            System.out.println("\n Menu \n1. Ingreso de Cantante \n2. Ingreson de Compositor \n4. Imprimir \n5. Buscqueda del cantante por el nombre del disco \n7. Salir");
+            System.out.println("\n Menu \n1. Ingreso de Cantante \n2. Ingreson de Compositor \n4. Imprimir \n5. Buscqueda del cantante por el nombre del disco \n6. Busqueda de compositor por nombre de cancion \n7. Salir");
             opcion = entrada.nextInt();
             switch(opcion){
                 case 1:
@@ -107,10 +106,16 @@ public class Main {
                     controladorPersona.imprimir();
                 case 5:
                     entrada.nextLine();
-                    System.out.println("Ingresar el nombre a buscar: ");
+                    System.out.println("Ingresar el nombre del disco: ");
                     String valor = entrada.nextLine();
                     controladorPersona.buscarPorNombreDeDisco(valor);
                     break;
+                case 6:
+                    entrada.nextLine();
+                    System.out.println("Ingresar el titulo de la cancion: ");
+                    String titulo = entrada.nextLine();
+                    controladorPersona.buscarPorTituloDeCancion(titulo);
+                    
                 case 7:
                     break;
                 default:
