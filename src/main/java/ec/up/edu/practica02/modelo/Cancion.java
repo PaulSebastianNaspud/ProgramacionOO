@@ -92,7 +92,5 @@ public class Cancion {
             return false;
         }
         return Objects.equals(this.letra, other.letra);
-    }
-    
-    
+    }   
 }
