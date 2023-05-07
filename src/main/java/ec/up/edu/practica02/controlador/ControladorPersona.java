@@ -5,6 +5,8 @@
 package ec.up.edu.practica02.controlador;
 
 import ec.up.edu.practica02.modelo.Cancion;
+import ec.up.edu.practica02.modelo.Cantante;
+import ec.up.edu.practica02.modelo.Disco;
 import ec.up.edu.practica02.modelo.Persona;
 import java.util.ArrayList;
 import java.util.List;
@@ -34,21 +36,24 @@ public class ControladorPersona implements IControlador{
         }
     }
 
-    public Persona buscarPorNombre(String valor){
-        
-        for(int i = 0; i<personas.size();i++){
-            if (personas.get(i).getNombre().equals(valor)){
-                return personas.get(i);
+    public Persona buscarPorNombreDeDisco(String valor){
+        for(Persona persona : personas ){
+            if (persona instanceof Cantante){
+                Cantante cantanteCasting = (Cantante) persona;
+                    for (Disco disco : cantanteCasting.getDiscografia()){
+                        if (cantanteCasting.getDiscografia().equals(valor)){
+                            return persona;
+                        }
+                    }
+                }
             }
-        }
+        
         return null;
     }
     
     public Persona buscarPorTituloDeCancion(String valor){
         Cancion buscador;
-        for (int i = 0; i < personas.size(); i++) {
-            valor.equals(personas.get(i).getApellido());
-        }
+        
         return null;
     }
 
