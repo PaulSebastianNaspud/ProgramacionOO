@@ -41,7 +41,8 @@ public class ControladorPersona implements IControlador{
             if (persona instanceof Cantante){
                 Cantante cantanteCasting = (Cantante) persona;
                     for (Disco disco : cantanteCasting.getDiscografia()){
-                        if (cantanteCasting.getDiscografia().equals(valor)){
+                        if (disco.getNombre().equals(valor)){
+                            System.out.println(persona);
                             return persona;
                         }
                     }
