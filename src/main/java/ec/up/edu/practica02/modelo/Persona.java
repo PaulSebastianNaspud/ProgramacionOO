@@ -119,7 +119,5 @@ public abstract class Persona {
             return false;
         }
         return Objects.equals(this.nacionalidad, other.nacionalidad);
-    }
-    
-        
+    }    
 }
