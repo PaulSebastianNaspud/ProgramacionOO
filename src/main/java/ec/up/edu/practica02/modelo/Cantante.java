@@ -19,15 +19,17 @@ public class Cantante extends Persona{
     private int numeroDeGiras;
     private List <Disco> discografia;
 
-    public Cantante(String nombreArtistico, String generoMusical, int numeroDeSensillos, int numeroDeConciertos, int numeroDeGiras, List<Disco> discografia, int codigo, String nombre, String apellido, int edad, String nacionalidad, double salario) {
-        super(codigo, nombre, apellido, edad, nacionalidad, salario);
+    public Cantante(String nombreArtistico, String generoMusical, int numeroDeSensillos, int numeroDeConciertos, int numeroDeGiras, int codigo, String nombre, String apellido, int edad, double salario,String nacionalidad) {
+        super(codigo, nombre, apellido, edad, salario,nacionalidad);
         this.nombreArtistico = nombreArtistico;
         this.generoMusical = generoMusical;
         this.numeroDeSensillos = numeroDeSensillos;
         this.numeroDeConciertos = numeroDeConciertos;
         this.numeroDeGiras = numeroDeGiras;
-        discografia= new ArrayList();
+        this.discografia = new ArrayList();
     }
+    
+    
     
     public String getNombreArtistico() {
         return nombreArtistico;
@@ -79,14 +81,12 @@ public class Cantante extends Persona{
     
     //metodos
     public void agregarDisco(int codigo, String nombre, int anioDeLanzamiento){
-        for (int i = 0; i < 10; i++) {
-            Disco disco = new Disco(codigo, nombre, anioDeLanzamiento);
-            discografia.add(disco);
-        }
+        Disco disco = new Disco(codigo, nombre, anioDeLanzamiento);
+        discografia.add(disco);
     }
     
     @Override
-    public double calcualarSalario() {
+    public  double calcularSalario() {
         if (numeroDeSensillos > 10 && numeroDeGiras >3){   
         }else if (numeroDeSensillos >1 || numeroDeSensillos<=10 ) {
             return (super.getSalario() + 1000);
@@ -100,7 +100,9 @@ public class Cantante extends Persona{
 
     @Override
     public String toString() {
-        return "Cantante{" + "nombreArtistico=" + nombreArtistico + ", generoMusical=" + generoMusical + ", numeroDeSensillos=" + numeroDeSensillos + ", numeroDeConciertos=" + numeroDeConciertos + ", numeroDeGiras=" + numeroDeGiras + ", discografia=" + discografia + '}';
+        return "Cantante{" + super.toString()+"nombreArtistico=" + nombreArtistico + ", generoMusical=" + generoMusical + ", numeroDeSensillos=" + numeroDeSensillos + ", numeroDeConciertos=" + numeroDeConciertos + ", numeroDeGiras=" + numeroDeGiras + ", discografia=" + discografia + '}';
     }
+
+
     
 }
