@@ -58,7 +58,7 @@ public class Compositor extends Persona {
     }
     
     public void agregarCliente(Cantante cliente){
-        clientes.add(cliente);        
+        clientes.add(cliente);
     }
     
     @Override
