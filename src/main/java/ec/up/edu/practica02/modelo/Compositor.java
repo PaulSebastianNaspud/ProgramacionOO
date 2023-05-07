@@ -52,7 +52,7 @@ public class Compositor extends Persona {
     }
     
     //metodos
-    public void agregarCancion(int codigo,String titulo,String letra){
+    public void agregarCancion(int codigo,String titulo,String letra,double tiempoEnMinutos){
         Cancion cancion = new Cancion(codigo, titulo, letra, codigo);
         cancionesTop100Billaboar.add(cancion);   
     }
