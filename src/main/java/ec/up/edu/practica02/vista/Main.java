@@ -22,7 +22,7 @@ public class Main {
         
         int opcion = 0;
         do{
-            System.out.println("\n Menu \n1. Ingreso de Cantante \n2. Ingreson de COmpositor \n3. Imprimir \n7. Salir");
+            System.out.println("\n Menu \n1. Ingreso de Cantante \n2. Ingreson de COmpositor \n4. Imprimir \n7. Salir");
             opcion = entrada.nextInt();
             switch(opcion){
                 case 1:
@@ -46,13 +46,24 @@ public class Main {
                     String nombreArtistico = entrada.nextLine();
                     System.out.println("Ingresar el genero musical del cantante: ");
                     String generoMusical = entrada.nextLine();
-                    System.out.println("Ingresar el numero de sensillos del cantante: ");
+                    System.out.println("Ingresar el numero de sensillos: ");
                     int nSensillos = Integer.parseInt(entrada.nextLine());
                     System.out.println("Ingresar el numero de conciertos del cantante: ");
                     int nConciertos = Integer.parseInt(entrada.nextLine());
                     System.out.println("Ingresar el numero de giras del cantante: ");
-                    int nGiras = Integer.parseInt(entrada.nextLine());
+                    int nGiras = entrada.nextInt();
                     Persona cantante = new Cantante(nombreArtistico, generoMusical, nSensillos, nConciertos, nGiras, codigo, nombre, apellido, edad, salario,nacionalidad);
+                    Cantante cantanteCasting = (Cantante) cantante;
+                    for (int i = 0; i < nSensillos; i++) {
+                        System.out.println("Ingresar el codigo del disco: ");
+                        int codigo2 = entrada.nextInt();
+                        System.out.println("Ingresar el año de lanzamiento:");
+                        int anioDeLanzamiento = entrada.nextInt();
+                        entrada.nextLine();
+                        System.out.println("Ingresar el nombre del disco: ");
+                        String nomreCancion =entrada.nextLine();
+                        cantanteCasting.agregarDisco(codigo2, nomreCancion, anioDeLanzamiento);
+                    }
                     controladorPersona.create(cantante);
                     break;
                 case 2:
@@ -76,9 +87,12 @@ public class Main {
                     int nDeComposiciones = entrada.nextInt();
                     
                     Persona compositor = new Compositor(nDeComposiciones, codigo, nombre, apellido, edad, salario, nacionalidad);
+                    
                     controladorPersona.create(compositor);
                     break;
                 case 3:
+                    
+                case 4:
                     controladorPersona.imprimir();
                 case 7:
                     break;
@@ -87,7 +101,6 @@ public class Main {
                     break;
             }
             
-        }while(opcion != 7);
-        
+        }while(opcion != 7);          
     }
 }
