@@ -116,7 +116,7 @@ public class Main {
                     System.out.println("Ingresar el titulo de la cancion: ");
                     String titulo = entrada.nextLine();
                     controladorPersona.buscarPorTituloDeCancion(titulo);
-                    
+                    break;
                 case 7:
                     break;
                 default:
