@@ -102,7 +102,7 @@ public class Main {
                     controladorPersona.create(compositor);
                     break;
                 case 3:
-                    
+                    break;
                 case 4:
                     controladorPersona.imprimir();
                     break;
