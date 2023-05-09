@@ -30,7 +30,7 @@ public class Main {
             opcion = entrada.nextInt();
             switch(opcion){
                 case 1:
-                    entrada.nextLine();//salto de nextInt
+                    entrada.nextLine();//posible salro de nextInt
                     System.out.println("Ingresar el nombre del cantante: ");
                     String nombre = entrada.nextLine();
                     System.out.println("Ingresar el apelldo del cantante: ");
@@ -69,10 +69,11 @@ public class Main {
                         String nomreCancion =entrada.nextLine();
                         cantanteCasting.agregarDisco(codigo2, nomreCancion, anioDeLanzamiento);
                     }
+                    cantante.calcularSalario();//llamar al metodo calcular salario 
                     controladorPersona.create(cantante);
                     break;
                 case 2:
-                    entrada.nextLine();//salto de nextInt
+                    entrada.nextLine();//posible salto de nextInt
                     System.out.println("Ingresar el nombre del compositor: ");
                     nombre = entrada.nextLine();
                     System.out.println("Ingresar el apelldo del compositor: ");
@@ -106,9 +107,11 @@ public class Main {
                         double tiempoEnMinutos = Double.parseDouble(entrada.nextLine());
                         compositorCasting.agregarCancion(codigo2, titulo, letra,tiempoEnMinutos);
                     }
+                    compositor.calcularSalario(); // llamar al metodo calcular salario
                     controladorPersona.create(compositor);
                     break;
                 case 3:
+                    entrada.nextLine();//posible salto de de nextInt
                     System.out.println("Ingresar el codigo de la cantante a agregar: ");
                     codigo = entrada.nextInt();
                     Cantante cantanteCasting = (Cantante) controladorPerCast.buscarPorCodigoCantante(codigo);
