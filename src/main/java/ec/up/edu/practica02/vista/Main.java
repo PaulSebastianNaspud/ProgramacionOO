@@ -1,10 +1,11 @@
-/*
+    /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
 
 package ec.up.edu.practica02.vista;
 
 import ec.up.edu.practica02.controlador.ControladorPersona;
+import ec.up.edu.practica02.controlador.IControlador;
 import ec.up.edu.practica02.modelo.Cantante;
 import ec.up.edu.practica02.modelo.Compositor;
 import ec.up.edu.practica02.modelo.Persona;
@@ -17,8 +18,10 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        ControladorPersona controladorPersona = new ControladorPersona();
+        IControlador controladorPersona = new ControladorPersona();
+        ControladorPersona controladorPerCast = (ControladorPersona) controladorPersona;
         Scanner entrada = new Scanner(System.in);
+        
         
         int opcion = 0;
         do{
@@ -102,21 +105,30 @@ public class Main {
                     controladorPersona.create(compositor);
                     break;
                 case 3:
+                    System.out.println("Ingresar el codigo de la cantante a agregar: ");
+                    codigo = entrada.nextInt();
+                    Cantante cantanteCasting = (Cantante) controladorPerCast.buscarPorCodigoCantante(codigo);
+                    System.out.println("Ingresar el codiigo del compositor al cual se quiere agregar: ");
+                    codigo = entrada.nextInt();
+                    Compositor compositorCasting = (Compositor) controladorPerCast.buscarPorCodigoCompositor(codigo);
+                    if (compositorCasting instanceof Persona && compositorCasting instanceof Persona ){
+                        compositorCasting.agregarCliente(cantanteCasting);
+                    }
                     break;
                 case 4:
-                    controladorPersona.imprimir();
+                    controladorPerCast.imprimir();
                     break;
                 case 5:
                     entrada.nextLine();
                     System.out.println("Ingresar el nombre del disco: ");
                     String valor = entrada.nextLine();
-                    controladorPersona.buscarPorNombreDeDisco(valor);
+                    controladorPerCast.buscarPorNombreDeDisco(valor);
                     break;
                 case 6:
                     entrada.nextLine();
                     System.out.println("Ingresar el titulo de la cancion: ");
                     String titulo = entrada.nextLine();
-                    controladorPersona.buscarPorTituloDeCancion(titulo);
+                    controladorPerCast.buscarPorTituloDeCancion(titulo);
                     break;
                 case 7:
                     break;
