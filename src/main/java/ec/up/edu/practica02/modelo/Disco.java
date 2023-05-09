@@ -6,21 +6,22 @@ package ec.up.edu.practica02.modelo;
 
 import java.util.Objects;
 
-/**
- *
- * @author estem
- */
+//creacionde de la clase Disco
 public class Disco {
-private int codigo;
-private String nombre;
-private int anioDeLanzamiento;
+    
+    //atributos private de la clase y encapsulamiento
+    private int codigo;
+    private String nombre;
+    private int anioDeLanzamiento;
 
+    //contructor de la clase Disco
     public Disco(int codigo, String nombre, int anioDeLanzamiento) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.anioDeLanzamiento = anioDeLanzamiento;
     }
 
+    //get and set de todos los atributos de la clase
     public int getCodigo() {
         return codigo;
     }
@@ -45,11 +46,13 @@ private int anioDeLanzamiento;
         this.anioDeLanzamiento = anioDeLanzamiento;
     }
 
+    //metodo toString con todos los atributos de la clase para imprimir en consala texto
     @Override
     public String toString() {
         return "Disco{" + "codigo=" + codigo + ", nombre=" + nombre + ", anioDeLanzamiento=" + anioDeLanzamiento + '}';
     }
 
+    //hashCode de la clase para comparar objetos
     @Override
     public int hashCode() {
         int hash = 7;
@@ -59,6 +62,7 @@ private int anioDeLanzamiento;
         return hash;
     }
 
+    //equals de la clase para comparar objetos
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -79,5 +83,5 @@ private int anioDeLanzamiento;
         }
         return Objects.equals(this.nombre, other.nombre);
     }
-    
+
 }
