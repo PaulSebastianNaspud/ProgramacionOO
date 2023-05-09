@@ -6,18 +6,18 @@ package ec.up.edu.practica02.modelo;
 
 import java.util.Objects;
 
-/**
- *
- * @author ESTUDIANTE
- */
+//creacion de la clase Persona, abstrac
 public abstract class Persona {
+    
+    //atributos private de la clase y encapsulamiento
     private int codigo;
     private String nombre;
     private String apellido;
     private int edad;
     private double salario;
     private String nacionalidad;
-
+    
+    //constructo de la clase
     public Persona(int codigo, String nombre, String apellido, int edad, double salario,String nacionalidad) {
         this.codigo = codigo;
         this.nombre = nombre;
@@ -26,7 +26,8 @@ public abstract class Persona {
         this.salario = salario;
         this.nacionalidad = nacionalidad;
     }
-
+    
+    //get and set de todos los atributos de la clase
     public int getCodigo() {
         return codigo;
     }
@@ -71,14 +72,16 @@ public abstract class Persona {
         this.nacionalidad = nacionalidad;
     }
     
-
+    //metodo abstrac
     public abstract double calcularSalario();
-
+    
+    //metodo toString con todos los atributos de la clase para imprimier textos en consola
     @Override
     public String toString() {
         return "{" + "codigo=" + codigo + ", nombre=" + nombre + ", apellido=" + apellido + ", edad=" + edad + ", salario=" + salario + ", nacionalidad=" + nacionalidad +'}';
     }
-
+    
+    //metodo hashCode de la clase para comparar objetos
     @Override
     public int hashCode() {
         int hash = 7;
@@ -90,7 +93,8 @@ public abstract class Persona {
         hash = 29 * hash + Objects.hashCode(this.nacionalidad);
         return hash;
     }
-
+    
+    //metodo equals de la clase para comparar objetos
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
