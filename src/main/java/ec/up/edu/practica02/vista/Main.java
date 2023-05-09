@@ -56,7 +56,9 @@ public class Main {
                     System.out.println("Ingresar el numero de giras del cantante: ");
                     int nGiras = entrada.nextInt();
                     Persona cantante = new Cantante(nombreArtistico, generoMusical, nSensillos, nConciertos, nGiras, codigo, nombre, apellido, edad, salario,nacionalidad);
-                    for (int i = 0; i < nSensillos; i++) {
+                    int cantidad = entrada.nextInt();
+                    System.out.println("Ingrese el numero de discos del cantante: ");
+                    for (int i = 0; i < cantidad; i++) {
                         Cantante cantanteCasting = (Cantante) cantante;
                         System.out.println("Ingresar el codigo del disco: ");
                         int codigo2 = entrada.nextInt();
@@ -87,9 +89,11 @@ public class Main {
                     entrada.nextLine();
                     System.out.println("Ingresat el numero de composiciones del compositor; ");
                     int nDeComposiciones = entrada.nextInt();
-                    entrada.nextLine();
                     Persona compositor = new Compositor(nDeComposiciones, codigo, nombre, apellido, edad, salario, nacionalidad);
-                    for (int i = 0; i < nDeComposiciones; i++) {
+                    System.out.println("Ingesar las cantidades de canciones del compositor: ");
+                    cantidad = entrada.nextInt(); //salto nextInt
+                    entrada.nextLine();
+                    for (int i = 0; i < cantidad; i++) {
                         Compositor compositorCasting = (Compositor) compositor;
                         System.out.println("Ingresar el codigo de la cacion: ");
                         int codigo2 = entrada.nextInt();
