@@ -67,6 +67,29 @@ public class ControladorPersona implements IControlador{
         }
         return null;
     }
+    public Persona buscarPorCodigoCompositor(int codigo){
+        for (Persona persona: personas){
+            if(persona instanceof Compositor){                
+                Compositor compositorCasting = (Compositor) persona;
+                if (compositorCasting.getCodigo() == codigo){
+                    return persona;
+                }
+            }
+        }
+        return null;
+    }
+    public Persona buscarPorCodigoCantante(int codigo){
+        for (Persona persona: personas){
+            if (persona instanceof Cantante){
+                Cantante cantanteCasting = (Cantante) persona;
+                if (cantanteCasting.getCodigo() == codigo ){
+                    return persona;
+                }
+            }
+
+        }
+        return null;
+    }
 
     @Override
     public String toString() {
