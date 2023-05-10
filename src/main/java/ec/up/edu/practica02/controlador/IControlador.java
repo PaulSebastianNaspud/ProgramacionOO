@@ -15,11 +15,11 @@ public interface IControlador {
 
     //metodo abastrac create que recibe un parametro del tipo Persona 
     public abstract void create(Persona obj);//C
+
     //metodo abastrac read que recibe un parametro del tipo Persona y devuelve una persona 
-
     public abstract Persona read(Persona obj);//R
-    //metodo abstract update que recibe un parametro del tipo Persona 
 
+    //metodo abstract update que recibe un parametro del tipo Persona 
     public abstract void update(Persona obj);//U
     
     //metodo abastract deleta que recibe un parametro del tipo Persona 
