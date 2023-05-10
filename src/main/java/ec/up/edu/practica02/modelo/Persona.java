@@ -17,7 +17,7 @@ public abstract class Persona {
     private double salario;
     private String nacionalidad;
     
-    //constructo de la clase
+    //constructor de la clase
     public Persona(int codigo, String nombre, String apellido, int edad, double salario,String nacionalidad) {
         this.codigo = codigo;
         this.nombre = nombre;
