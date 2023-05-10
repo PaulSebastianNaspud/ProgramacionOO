@@ -23,7 +23,7 @@ public class Main {
         Scanner entrada = new Scanner(System.in);
         
         int opcion = 0; //inicializar una variabele int que entre al bucle do while
-        do { //bucle do- whilw con condicion falso de int = 7 para salir del bucle
+        do { //bucle do-while con condicion falso de int = 7 para salir del bucle
             //menu con 7 opciones
             System.out.println("\n Menu \n1. Ingreso de Cantante \n2. Ingreson de Compositor \n3. Agregar Clientes \n4. Imprimir"
                     + " \n5. Buscqueda de cantante por el nombre del disco \n6. Busqueda de compositor por nombre de cancion \n7. Salir");
@@ -164,7 +164,7 @@ public class Main {
                 case 7:
                     break;//terminar el bucle
                 default:
-                    System.out.println("Opcion no valida");//mesanje para opcion no valida
+                    System.out.println("Opcion no valida");//mensaje para opcion no valida
                     break;
             }
         } while (opcion != 7);//condicion para el fin del bucle
