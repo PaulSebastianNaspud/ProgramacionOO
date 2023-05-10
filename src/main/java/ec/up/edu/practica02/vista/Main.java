@@ -74,7 +74,7 @@ public class Main {
                         cantanteCasting.agregarDisco(codigo2, nomreCancion, anioDeLanzamiento); 
                     }
                     //llamar al metodo calcularSalario para calcular el salrio final y utiliazcion de los metodos sobrescritos abstract
-                    System.out.println("Salario final del cantante: " + cantante.calcularSalario());
+                    cantante.calcularSalario();
                     //create cantanete en la lista personas
                     controladorPersona.create(cantante);
                     break;
@@ -110,7 +110,7 @@ public class Main {
                         entrada.nextLine();
                         System.out.println("Ingresar el titulo de la cancion: ");
                         String titulo = entrada.nextLine();
-                        System.out.println("Ingresar la laetra de la canciom: ");
+                        System.out.println("Ingresar la la letra de la canciom: ");
                         String letra = entrada.nextLine();
                         System.out.println("Ingresar el tiempo de duracion de la cancion: ");
                         double tiempoEnMinutos = Double.parseDouble(entrada.nextLine());
