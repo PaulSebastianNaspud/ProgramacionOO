@@ -1,2 +1,2 @@
 # ProgramacionOO
-Nombre: Paul Naspud
+Integrantes: Paul Naspud, Joaquin Zavala
